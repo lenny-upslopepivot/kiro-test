@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
 import { Header } from '@/components'
-import { Home, About } from '@/pages'
+import { Home, About, Contact } from '@/pages'
 
 export const App = () => {
   return (
@@ -11,6 +11,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Box>
     </BrowserRouter>

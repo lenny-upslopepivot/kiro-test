@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Box } from '@mui/material'
-import { Header } from '@/components'
+import { Header, Footer } from '@/components'
 import { Home, About, Contact } from '@/pages'
 
 export const App = () => {
@@ -13,6 +13,7 @@ export const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
       </Box>
     </BrowserRouter>
   )

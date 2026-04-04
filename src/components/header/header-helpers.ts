@@ -2,7 +2,7 @@ import { type Theme } from '@mui/material'
 
 export const headerStyles = {
   appBar: {
-    position: 'static' as const,
+    position: 'fixed' as const,
     elevation: 0,
     sx: {
       backgroundColor: '#0f172a',

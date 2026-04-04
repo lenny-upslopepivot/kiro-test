@@ -1,14 +1,18 @@
-import { Button, Container, Typography } from '@mui/material'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Box } from '@mui/material'
+import { Header } from '@/components'
+import { Home, About } from '@/pages'
 
-function App() {
+export const App = () => {
   return (
-    <Container maxWidth="sm" sx={{ mt: 4 }}>
-      <Typography variant="h4" gutterBottom>
-        Kiro Test App
-      </Typography>
-      <Button variant="contained">Hello, Material UI</Button>
-    </Container>
+    <BrowserRouter>
+      <Box sx={{ minHeight: '100vh', backgroundColor: '#fff' }}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </Box>
+    </BrowserRouter>
   )
 }
-
-export default App

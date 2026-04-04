@@ -22,14 +22,14 @@ export const homeStyles = {
     '&:hover': { backgroundColor: '#4f46e5' },
   },
   outlineButton: {
-    border: '1.5px solid #475569',
-    color: '#e2e8f0',
+    border: '1.5px solid #334155',
+    color: '#1e293b',
     fontWeight: 500,
     px: 3,
     py: 1.25,
     borderRadius: 2,
     textTransform: 'none' as const,
-    '&:hover': { borderColor: '#64748b', backgroundColor: '#1e293b' },
+    '&:hover': { borderColor: '#475569', backgroundColor: '#f1f5f9' },
   },
   sectionTitle: {
     fontSize: '1.4rem',

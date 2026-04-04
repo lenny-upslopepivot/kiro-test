@@ -26,6 +26,13 @@ export const headerStyles = {
     textDecoration: 'none',
     '&:hover': { opacity: 0.85 },
   }),
+  // Right side container — holds desktop nav, theme toggle, and mobile hamburger
+  rightSide: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 1,
+    ml: 'auto',
+  },
   // Desktop nav — hidden on mobile, visible md+
   navLinks: {
     sx: {
@@ -48,11 +55,16 @@ export const headerStyles = {
       backgroundColor: 'rgba(255,255,255,0.08)',
     },
   }),
+  // Theme toggle button — always visible, always on the dark AppBar
+  themeToggleButton: {
+    color: '#fff',
+    p: 1,
+    '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' },
+  },
   // Hamburger button — visible on mobile, hidden md+
   hamburgerButton: {
     display: { xs: 'flex', md: 'none' },
     color: '#fff',
-    ml: 'auto',
     p: 1,
   },
   // Drawer paper

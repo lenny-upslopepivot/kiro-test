@@ -1,3 +1,5 @@
+import { type Theme } from '@mui/material'
+
 export const homeStyles = {
   root: {
     py: { xs: 6, md: 10 },
@@ -11,58 +13,61 @@ export const homeStyles = {
     flexWrap: 'wrap' as const,
     mb: 6,
   },
-  primaryButton: {
-    backgroundColor: '#6366f1',
+  primaryButton: (theme: Theme) => ({
+    backgroundColor: theme.palette.primary.main,
     color: '#fff',
     fontWeight: 600,
     px: 3,
     py: 1.25,
     borderRadius: 2,
     textTransform: 'none' as const,
-    '&:hover': { backgroundColor: '#4f46e5' },
-  },
-  outlineButton: {
-    border: '1.5px solid #334155',
-    color: '#1e293b',
+    '&:hover': { backgroundColor: theme.palette.primary.dark },
+  }),
+  outlineButton: (theme: Theme) => ({
+    border: `1.5px solid ${theme.palette.divider}`,
+    color: theme.palette.text.primary,
     fontWeight: 500,
     px: 3,
     py: 1.25,
     borderRadius: 2,
     textTransform: 'none' as const,
-    '&:hover': { borderColor: '#475569', backgroundColor: '#f1f5f9' },
-  },
-  sectionTitle: {
+    '&:hover': {
+      borderColor: theme.palette.mode === 'dark' ? '#64748b' : '#475569',
+      backgroundColor: theme.palette.action.hover,
+    },
+  }),
+  sectionTitle: (theme: Theme) => ({
     fontSize: '1.4rem',
     fontWeight: 700,
-    color: '#0f172a',
+    color: theme.palette.text.primary,
     mb: 3,
-  },
+  }),
   grid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
     gap: 3,
   },
-  card: {
+  card: (theme: Theme) => ({
     p: 3,
-    border: '1px solid #e2e8f0',
+    border: `1px solid ${theme.palette.divider}`,
     borderRadius: 3,
-    backgroundColor: '#f8fafc',
-  },
+    backgroundColor: theme.palette.background.paper,
+  }),
   cardIcon: {
     fontSize: '1.75rem',
     mb: 1,
   },
-  cardTitle: {
+  cardTitle: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '1rem',
-    color: '#1e293b',
+    color: theme.palette.text.primary,
     mb: 0.5,
-  },
-  cardBody: {
+  }),
+  cardBody: (theme: Theme) => ({
     fontSize: '0.875rem',
-    color: '#64748b',
+    color: theme.palette.text.secondary,
     lineHeight: 1.6,
-  },
+  }),
 }
 
 export interface FeatureCard {

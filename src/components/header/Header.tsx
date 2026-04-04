@@ -11,13 +11,15 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
-import { Menu, X } from 'lucide-react'
+import { Menu, Moon, Sun, X } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
+import { useThemeMode } from '@/lib'
 import { headerStyles, NAV_ITEMS } from './header-helpers'
 
 export const Header = () => {
   const { pathname } = useLocation()
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const { mode, toggleMode } = useThemeMode()
 
   const openDrawer = () => setDrawerOpen(true)
   const closeDrawer = () => setDrawerOpen(false)
@@ -35,28 +37,40 @@ export const Header = () => {
             Upslope
           </Typography>
 
-          {/* Desktop nav — hidden on mobile */}
-          <Box sx={headerStyles.navLinks.sx}>
-            {NAV_ITEMS.map(({ label, path }) => (
-              <Typography
-                key={path}
-                component={Link}
-                to={path}
-                sx={headerStyles.navLink(pathname === path)}
-              >
-                {label}
-              </Typography>
-            ))}
-          </Box>
+          {/* Right side: desktop nav + theme toggle + mobile hamburger */}
+          <Box sx={headerStyles.rightSide}>
+            {/* Desktop nav — hidden on mobile */}
+            <Box sx={headerStyles.navLinks.sx}>
+              {NAV_ITEMS.map(({ label, path }) => (
+                <Typography
+                  key={path}
+                  component={Link}
+                  to={path}
+                  sx={headerStyles.navLink(pathname === path)}
+                >
+                  {label}
+                </Typography>
+              ))}
+            </Box>
 
-          {/* Hamburger — hidden on desktop */}
-          <IconButton
-            aria-label="Open navigation menu"
-            onClick={openDrawer}
-            sx={headerStyles.hamburgerButton}
-          >
-            <Menu size={22} />
-          </IconButton>
+            {/* Theme toggle — always visible */}
+            <IconButton
+              aria-label={mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              onClick={toggleMode}
+              sx={headerStyles.themeToggleButton}
+            >
+              {mode === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </IconButton>
+
+            {/* Hamburger — visible on mobile only */}
+            <IconButton
+              aria-label="Open navigation menu"
+              onClick={openDrawer}
+              sx={headerStyles.hamburgerButton}
+            >
+              <Menu size={22} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </AppBar>
 

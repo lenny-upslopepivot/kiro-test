@@ -14,7 +14,7 @@ export const headerStyles = {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      px: { xs: 2, sm: 4 },
+      px: { xs: 2, sm: 2, md: 4 },
       py: 1,
     },
   },
@@ -26,9 +26,10 @@ export const headerStyles = {
     textDecoration: 'none',
     '&:hover': { opacity: 0.85 },
   }),
+  // Desktop nav — hidden on mobile, visible md+
   navLinks: {
     sx: {
-      display: 'flex',
+      display: { xs: 'none', md: 'flex' },
       gap: 1,
     },
   },
@@ -45,6 +46,60 @@ export const headerStyles = {
     '&:hover': {
       color: '#fff',
       backgroundColor: 'rgba(255,255,255,0.08)',
+    },
+  }),
+  // Hamburger button — visible on mobile, hidden md+
+  hamburgerButton: {
+    display: { xs: 'flex', md: 'none' },
+    color: '#fff',
+    ml: 'auto',
+    p: 1,
+  },
+  // Drawer paper
+  drawerPaper: {
+    backgroundColor: '#0f172a',
+    width: 260,
+  },
+  // Drawer header row (brand + close button)
+  drawerHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    px: 2,
+    py: 1.5,
+    borderBottom: '1px solid rgba(255,255,255,0.08)',
+  },
+  drawerBrand: (theme: Theme) => ({
+    fontWeight: 700,
+    fontSize: '1.25rem',
+    letterSpacing: '-0.02em',
+    color: theme.palette.common.white,
+    textDecoration: 'none',
+    '&:hover': { opacity: 0.85 },
+  }),
+  drawerCloseButton: {
+    color: 'rgba(255,255,255,0.7)',
+    p: 1,
+    '&:hover': { color: '#fff' },
+  },
+  // Drawer nav list
+  drawerNavList: {
+    pt: 1,
+    px: 1,
+  },
+  drawerNavItem: (active: boolean) => ({
+    borderRadius: 1,
+    mb: 0.5,
+    backgroundColor: active ? 'rgba(255,255,255,0.1)' : 'transparent',
+    '&:hover': {
+      backgroundColor: 'rgba(255,255,255,0.08)',
+    },
+  }),
+  drawerNavText: (active: boolean) => ({
+    '& .MuiListItemText-primary': {
+      color: active ? '#fff' : 'rgba(255,255,255,0.65)',
+      fontWeight: active ? 600 : 400,
+      fontSize: '0.95rem',
     },
   }),
 }

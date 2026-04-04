@@ -1,17 +1,11 @@
 import { Box, Button, TextField, Typography } from '@mui/material'
+import { PageHeading } from '@/components'
 import { contactStyles } from './contact-helpers'
 
 export const Contact = () => {
   return (
     <Box sx={contactStyles.root}>
-      <Typography sx={contactStyles.eyebrow}>Get in touch</Typography>
-      <Typography variant="h1" sx={contactStyles.headline}>
-        We'd love to hear<br />from you.
-      </Typography>
-      <Typography sx={contactStyles.intro}>
-        Have a question about our platform, pricing, or how Upslope Pivot fits
-        your team's workflow? Send us a message and we'll get back to you promptly.
-      </Typography>
+      <PageHeading />
 
       <Box component="form" sx={contactStyles.form} noValidate>
         <Box>

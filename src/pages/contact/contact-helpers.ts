@@ -5,28 +5,6 @@ export const contactStyles = {
     maxWidth: 680,
     mx: 'auto',
   },
-  eyebrow: {
-    fontSize: '0.8rem',
-    fontWeight: 600,
-    letterSpacing: '0.12em',
-    textTransform: 'uppercase' as const,
-    color: '#6366f1',
-    mb: 1.5,
-  },
-  headline: {
-    fontSize: { xs: '2rem', md: '2.75rem' },
-    fontWeight: 800,
-    lineHeight: 1.15,
-    letterSpacing: '-0.03em',
-    color: '#0f172a',
-    mb: 2,
-  },
-  intro: {
-    fontSize: '1.1rem',
-    color: '#475569',
-    lineHeight: 1.8,
-    mb: 5,
-  },
   form: {
     display: 'flex',
     flexDirection: 'column' as const,

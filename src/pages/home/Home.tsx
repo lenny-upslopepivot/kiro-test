@@ -1,27 +1,19 @@
 import { Box, Button, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { PageHeading } from '@/components'
 import { homeStyles, FEATURE_CARDS } from './home-helpers'
 
 export const Home = () => {
   return (
     <Box sx={homeStyles.root}>
-      <Box sx={homeStyles.hero}>
-        <Typography sx={homeStyles.eyebrow}>Upslope Pivot</Typography>
-        <Typography variant="h1" sx={homeStyles.headline}>
-          Build faster.<br />Ship with confidence.
-        </Typography>
-        <Typography sx={homeStyles.subheadline}>
-          An agentic development platform that turns well-scoped tickets into
-          production-ready code — reviewed, tested, and ready to merge.
-        </Typography>
-        <Box sx={homeStyles.ctaRow}>
-          <Button component={Link} to="/about" sx={homeStyles.primaryButton}>
-            Learn about us
-          </Button>
-          <Button variant="outlined" sx={homeStyles.outlineButton}>
-            View on GitHub
-          </Button>
-        </Box>
+      <PageHeading />
+      <Box sx={homeStyles.ctaRow}>
+        <Button component={Link} to="/about" sx={homeStyles.primaryButton}>
+          Learn about us
+        </Button>
+        <Button variant="outlined" sx={homeStyles.outlineButton}>
+          View on GitHub
+        </Button>
       </Box>
 
       <Typography sx={homeStyles.sectionTitle}>Why teams choose Upslope</Typography>

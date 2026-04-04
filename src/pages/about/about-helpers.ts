@@ -1,3 +1,5 @@
+import { type Theme } from '@mui/material'
+
 export const aboutStyles = {
   root: {
     py: { xs: 6, md: 10 },
@@ -5,74 +7,74 @@ export const aboutStyles = {
     maxWidth: 860,
     mx: 'auto',
   },
-  sectionTitle: {
+  sectionTitle: (theme: Theme) => ({
     fontSize: '1.3rem',
     fontWeight: 700,
-    color: '#0f172a',
+    color: theme.palette.text.primary,
     mb: 3,
-  },
+  }),
   valuesGrid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
     gap: 3,
     mb: 8,
   },
-  valueCard: {
+  valueCard: (theme: Theme) => ({
     p: 3,
-    border: '1px solid #e2e8f0',
+    border: `1px solid ${theme.palette.divider}`,
     borderRadius: 3,
-  },
-  valueTitle: {
+  }),
+  valueTitle: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '1rem',
-    color: '#1e293b',
+    color: theme.palette.text.primary,
     mb: 0.75,
-  },
-  valueBody: {
+  }),
+  valueBody: (theme: Theme) => ({
     fontSize: '0.875rem',
-    color: '#64748b',
+    color: theme.palette.text.secondary,
     lineHeight: 1.65,
-  },
+  }),
   teamGrid: {
     display: 'grid',
     gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
     gap: 3,
   },
-  teamCard: {
+  teamCard: (theme: Theme) => ({
     p: 3,
-    backgroundColor: '#f8fafc',
-    border: '1px solid #e2e8f0',
+    backgroundColor: theme.palette.background.paper,
+    border: `1px solid ${theme.palette.divider}`,
     borderRadius: 3,
     textAlign: 'center' as const,
-  },
-  avatar: {
+  }),
+  avatar: (theme: Theme) => ({
     width: 56,
     height: 56,
     borderRadius: '50%',
-    backgroundColor: '#e0e7ff',
+    backgroundColor: theme.palette.mode === 'dark' ? '#312e81' : '#e0e7ff',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     mx: 'auto',
     mb: 1.5,
     fontSize: '1.5rem',
-  },
-  teamName: {
+  }),
+  teamName: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '0.95rem',
-    color: '#1e293b',
-  },
-  teamRole: {
+    color: theme.palette.text.primary,
+  }),
+  teamRole: (theme: Theme) => ({
     fontSize: '0.8rem',
-    color: '#6366f1',
+    color: theme.palette.primary.main,
     fontWeight: 500,
     mb: 0.75,
-  },
-  teamBio: {
+  }),
+  teamBio: (theme: Theme) => ({
     fontSize: '0.8rem',
-    color: '#64748b',
+    color: theme.palette.text.secondary,
     lineHeight: 1.6,
-  },
+  }),
 }
 
 export interface ValueItem {

@@ -1,0 +1,23 @@
+{
+  "_todo": "TODO(nova): Replace placeholder testimonials with real quotes and headshots from approved customer contacts",
+  "testimonials": [
+    {
+      "quote": "Upslope cut our release cycle in half. Our agents handle the repetitive scaffolding work so our engineers can focus on the problems that actually matter.",
+      "authorName": "Alex Rivera",
+      "authorTitle": "VP of Engineering, Acme Corp",
+      "avatarUrl": "https://i.pravatar.cc/150?img=11"
+    },
+    {
+      "quote": "The observability alone is worth it. We finally know what our automation is doing at every step, and we can debug failures in minutes instead of hours.",
+      "authorName": "Jordan Lee",
+      "authorTitle": "Staff Engineer, Momentum Labs",
+      "avatarUrl": "https://i.pravatar.cc/150?img=47"
+    },
+    {
+      "quote": "We evaluated three platforms. Upslope was the only one that didn't make us rebuild our workflow from scratch. It just fit.",
+      "authorName": "Taylor Nguyen",
+      "authorTitle": "CTO, Fieldstone Systems",
+      "avatarUrl": "https://i.pravatar.cc/150?img=32"
+    }
+  ]
+}

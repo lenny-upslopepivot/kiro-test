@@ -1,0 +1,25 @@
+{
+  "_todo": "TODO(nova): Review and finalize all stat values and labels before launch",
+  "stats": [
+    {
+      "value": "10k+",
+      "label": "Active Users",
+      "description": "Developers and teams using Upslope every day"
+    },
+    {
+      "value": "99.9%",
+      "label": "Uptime",
+      "description": "Reliable infrastructure your team can count on"
+    },
+    {
+      "value": "3x",
+      "label": "Faster Delivery",
+      "description": "Teams ship features faster with agentic workflows"
+    },
+    {
+      "value": "500+",
+      "label": "Integrations",
+      "description": "Connect with the tools your team already uses"
+    }
+  ]
+}

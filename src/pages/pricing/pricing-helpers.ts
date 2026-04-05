@@ -1,46 +1,9 @@
 import { type Theme } from '@mui/material'
 
-export const pricingStyles = {
-  root: {
-    py: { xs: 6, md: 10 },
-    px: { xs: 2, sm: 4 },
-    maxWidth: 860,
-    mx: 'auto',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
-    gap: 3,
-  },
-  card: (theme: Theme) => ({
-    p: 4,
-    border: `1px solid ${theme.palette.divider}`,
-    borderRadius: 3,
-    backgroundColor: theme.palette.background.paper,
-    display: 'flex',
-    flexDirection: 'column' as const,
-    gap: 2,
-  }),
-  planName: (theme: Theme) => ({
-    fontWeight: 700,
-    fontSize: '1.1rem',
-    color: theme.palette.text.primary,
-  }),
-  planPrice: (theme: Theme) => ({
-    fontWeight: 800,
-    fontSize: '2rem',
-    color: theme.palette.primary.main,
-    lineHeight: 1,
-  }),
-  planDescription: (theme: Theme) => ({
-    fontSize: '0.875rem',
-    color: theme.palette.text.secondary,
-    lineHeight: 1.6,
-  }),
-}
+// ─── Interfaces ───────────────────────────────────────────────────────────────
 
 export interface PricingPlan {
-  name: string
+  planName: string
   price: string
   billingPeriod: string
   features: string[]
@@ -49,47 +12,86 @@ export interface PricingPlan {
   highlighted?: boolean
 }
 
-export const PRICING_PLANS: PricingPlan[] = [
-  {
-    name: 'Starter',
-    price: '$0',
-    billingPeriod: '/ month',
-    features: [
-      'Up to 3 tickets per month',
-      'Kiro & Nova personas',
-      'GitHub integration',
-      'Community support',
-    ],
-    ctaLabel: 'Get started free',
-    ctaHref: '/signup',
+export interface FaqEntry {
+  question: string
+  answer: string
+}
+
+// ─── Styles ───────────────────────────────────────────────────────────────────
+
+export const pricingStyles = {
+  root: {
+    py: { xs: 6, md: 10 },
+    px: { xs: 2, sm: 4 },
+    maxWidth: 960,
+    mx: 'auto',
   },
-  {
-    name: 'Team',
-    price: '$99',
-    billingPeriod: '/ month',
-    features: [
-      'Unlimited tickets',
-      'All agent personas',
-      'GitHub + Linear integration',
-      'Priority support',
-      'Team dashboard',
-    ],
-    ctaLabel: 'Start free trial',
-    ctaHref: '/signup?plan=team',
-    highlighted: true,
+
+  sectionHeading: {
+    textAlign: 'center' as const,
+    mb: 8,
   },
-  {
-    name: 'Enterprise',
-    price: 'Custom',
-    billingPeriod: 'contact us',
-    features: [
-      'Everything in Team',
-      'Custom agent personas',
-      'Dedicated infrastructure',
-      'SLA & compliance docs',
-      'Onboarding & training',
-    ],
-    ctaLabel: 'Talk to sales',
-    ctaHref: '/contact',
+
+  headline: (theme: Theme) => ({
+    fontWeight: 800,
+    fontSize: { xs: '2rem', md: '2.75rem' },
+    lineHeight: 1.15,
+    letterSpacing: '-0.025em',
+    color: theme.palette.text.primary,
+    mb: 1.5,
+  }),
+
+  subheadline: (theme: Theme) => ({
+    fontSize: '1.1rem',
+    color: theme.palette.text.secondary,
+    lineHeight: 1.7,
+    maxWidth: 520,
+    mx: 'auto',
+  }),
+
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
+    gap: 3,
   },
-]
+
+  faqSection: {
+    mt: { xs: 8, md: 12 },
+  },
+
+  faqHeadline: (theme: Theme) => ({
+    fontWeight: 700,
+    fontSize: { xs: '1.5rem', md: '2rem' },
+    letterSpacing: '-0.02em',
+    color: theme.palette.text.primary,
+    mb: 4,
+    textAlign: 'center' as const,
+  }),
+
+  accordion: (theme: Theme) => ({
+    border: `1px solid ${theme.palette.divider}`,
+    borderRadius: '8px !important',
+    mb: 1.5,
+    boxShadow: 'none',
+    '&:before': { display: 'none' },
+    '&.Mui-expanded': { mt: 0 },
+  }),
+
+  accordionSummary: (theme: Theme) => ({
+    fontWeight: 600,
+    fontSize: '0.9875rem',
+    color: theme.palette.text.primary,
+    lineHeight: 1.5,
+    px: 3,
+    py: 0.5,
+  }),
+
+  accordionDetails: (theme: Theme) => ({
+    fontSize: '0.9375rem',
+    color: theme.palette.text.secondary,
+    lineHeight: 1.7,
+    px: 3,
+    pb: 2.5,
+    pt: 0,
+  }),
+}

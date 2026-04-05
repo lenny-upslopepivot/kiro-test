@@ -1,0 +1,46 @@
+[
+  {
+    "planName": "Starter",
+    "price": "$0",
+    "billingPeriod": "/ month",
+    "features": [
+      "Up to 3 tickets per month",
+      "Kiro & Nova personas",
+      "GitHub integration",
+      "Community support"
+    ],
+    "ctaLabel": "Get started free",
+    "ctaHref": "/signup",
+    "highlighted": false
+  },
+  {
+    "planName": "Team",
+    "price": "$99",
+    "billingPeriod": "/ month",
+    "features": [
+      "Unlimited tickets",
+      "All agent personas",
+      "GitHub + Linear integration",
+      "Priority support",
+      "Team dashboard"
+    ],
+    "ctaLabel": "Start free trial",
+    "ctaHref": "/signup?plan=team",
+    "highlighted": true
+  },
+  {
+    "planName": "Enterprise",
+    "price": "Custom",
+    "billingPeriod": "contact us",
+    "features": [
+      "Everything in Team",
+      "Custom agent personas",
+      "Dedicated infrastructure",
+      "SLA & compliance docs",
+      "Onboarding & training"
+    ],
+    "ctaLabel": "Talk to sales",
+    "ctaHref": "/contact",
+    "highlighted": false
+  }
+]

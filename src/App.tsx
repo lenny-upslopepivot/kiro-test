@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { ThemeContextProvider } from '@/lib'
 import { PageShell } from '@/components'
-import { Home, Features, Pricing, About, Contact, Demo, NotFound } from '@/pages'
+import { Landing, Features, Pricing, About, Contact, Demo, NotFound } from '@/pages'
 
 export const App = () => {
   return (
@@ -9,7 +9,7 @@ export const App = () => {
       <BrowserRouter>
         <Routes>
           <Route element={<PageShell />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Landing />} />
             <Route path="/features" element={<Features />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />

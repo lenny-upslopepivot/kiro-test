@@ -1,0 +1,64 @@
+{
+  "activity": [
+    {
+      "timestamp": "2026-04-05T21:47:00Z",
+      "user": "Marcus Webb",
+      "action": "deployment_triggered",
+      "details": "Deployed agent pipeline v2.3.1 to production"
+    },
+    {
+      "timestamp": "2026-04-05T20:12:00Z",
+      "user": "Priya Nair",
+      "action": "integration_added",
+      "details": "Connected GitHub repository heliostech/core-api"
+    },
+    {
+      "timestamp": "2026-04-05T18:55:00Z",
+      "user": "Tyler Okafor",
+      "action": "agent_run_completed",
+      "details": "Completed scaffold task for feature/auth-refresh in 4m 12s"
+    },
+    {
+      "timestamp": "2026-04-05T17:30:00Z",
+      "user": "Jordan Ellsworth",
+      "action": "invite_sent",
+      "details": "Invited riley.chan@heliostech.io as member"
+    },
+    {
+      "timestamp": "2026-04-05T15:08:00Z",
+      "user": "Sofia Delgado",
+      "action": "billing_updated",
+      "details": "Upgraded workspace plan from Starter to Pro"
+    },
+    {
+      "timestamp": "2026-04-04T22:41:00Z",
+      "user": "Dmitri Volkov",
+      "action": "agent_run_failed",
+      "details": "Pipeline run failed on step 3 — token limit exceeded"
+    },
+    {
+      "timestamp": "2026-04-04T19:20:00Z",
+      "user": "Marcus Webb",
+      "action": "settings_updated",
+      "details": "Updated workspace SSO configuration"
+    },
+    {
+      "timestamp": "2026-04-04T14:05:00Z",
+      "user": "Priya Nair",
+      "action": "deployment_triggered",
+      "details": "Deployed agent pipeline v2.3.0 to staging"
+    },
+    {
+      "timestamp": "2026-04-03T11:33:00Z",
+      "user": "Tyler Okafor",
+      "action": "agent_run_completed",
+      "details": "Completed code review task for PR #184 in 2m 58s"
+    },
+    {
+      "timestamp": "2026-04-03T09:15:00Z",
+      "user": "Hannah Stroud",
+      "action": "login",
+      "details": "Signed in from 192.168.1.42"
+    }
+  ]
+}

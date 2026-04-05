@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": "usr_001",
+      "name": "Marcus Webb",
+      "email": "marcus.webb@heliostech.io",
+      "role": "admin",
+      "status": "active",
+      "joinedDate": "2024-03-12T09:00:00Z"
+    },
+    {
+      "id": "usr_002",
+      "name": "Priya Nair",
+      "email": "priya.nair@heliostech.io",
+      "role": "member",
+      "status": "active",
+      "joinedDate": "2024-05-22T14:30:00Z"
+    },
+    {
+      "id": "usr_003",
+      "name": "Jordan Ellsworth",
+      "email": "j.ellsworth@heliostech.io",
+      "role": "member",
+      "status": "active",
+      "joinedDate": "2024-06-08T11:15:00Z"
+    },
+    {
+      "id": "usr_004",
+      "name": "Sofia Delgado",
+      "email": "sofia.delgado@heliostech.io",
+      "role": "billing",
+      "status": "active",
+      "joinedDate": "2024-07-01T08:45:00Z"
+    },
+    {
+      "id": "usr_005",
+      "name": "Tyler Okafor",
+      "email": "tyler.okafor@heliostech.io",
+      "role": "member",
+      "status": "active",
+      "joinedDate": "2024-08-19T13:00:00Z"
+    },
+    {
+      "id": "usr_006",
+      "name": "Hannah Stroud",
+      "email": "h.stroud@heliostech.io",
+      "role": "viewer",
+      "status": "inactive",
+      "joinedDate": "2024-09-03T10:20:00Z"
+    },
+    {
+      "id": "usr_007",
+      "name": "Dmitri Volkov",
+      "email": "d.volkov@heliostech.io",
+      "role": "member",
+      "status": "active",
+      "joinedDate": "2024-11-14T16:00:00Z"
+    },
+    {
+      "id": "usr_008",
+      "name": "Camille Fontaine",
+      "email": "camille.fontaine@heliostech.io",
+      "role": "viewer",
+      "status": "suspended",
+      "joinedDate": "2025-01-27T09:30:00Z"
+    }
+  ]
+}

@@ -1,81 +1,62 @@
 import { type Theme } from '@mui/material'
 
+// ---------------------------------------------------------------------------
+// Hero config — title + subtitle sourced from this constant, not hardcoded in JSX
+// ---------------------------------------------------------------------------
+
+export interface FeaturesHeroConfig {
+  title: string
+  subtitle: string
+}
+
+export const FEATURES_HERO: FeaturesHeroConfig = {
+  title: 'Everything you need to ship faster',
+  subtitle:
+    'Explore the full set of capabilities that make Upslope the platform of choice for high-velocity engineering teams.',
+}
+
+// ---------------------------------------------------------------------------
+// Data types
+// ---------------------------------------------------------------------------
+
+export interface FeatureItem {
+  title: string
+  description: string
+  longDescription: string
+  icon: string
+}
+
+// ---------------------------------------------------------------------------
+// Styles
+// ---------------------------------------------------------------------------
+
 export const featuresStyles = {
   root: {
     py: { xs: 6, md: 10 },
     px: { xs: 2, sm: 4 },
-    maxWidth: 860,
+    maxWidth: 1100,
     mx: 'auto',
   },
+  hero: {
+    mb: 6,
+  },
+  heroTitle: (theme: Theme) => ({
+    fontSize: { xs: '2rem', md: '2.75rem' },
+    fontWeight: 800,
+    lineHeight: 1.15,
+    letterSpacing: '-0.03em',
+    color: theme.palette.text.primary,
+    mb: 2,
+  }),
+  heroSubtitle: (theme: Theme) => ({
+    fontSize: '1.1rem',
+    color: theme.palette.text.secondary,
+    lineHeight: 1.7,
+    maxWidth: 640,
+  }),
   grid: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
+    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
     gap: 3,
   },
-  card: (theme: Theme) => ({
-    p: 3,
-    border: `1px solid ${theme.palette.divider}`,
-    borderRadius: 3,
-    backgroundColor: theme.palette.background.paper,
-  }),
-  cardIcon: {
-    fontSize: '1.75rem',
-    mb: 1,
-  },
-  cardTitle: (theme: Theme) => ({
-    fontWeight: 700,
-    fontSize: '1rem',
-    color: theme.palette.text.primary,
-    mb: 0.5,
-  }),
-  cardBody: (theme: Theme) => ({
-    fontSize: '0.875rem',
-    color: theme.palette.text.secondary,
-    lineHeight: 1.6,
-  }),
 }
-
-export interface FeatureItem {
-  icon: string
-  title: string
-  description: string
-}
-
-export const FEATURES: FeatureItem[] = [
-  {
-    icon: '⚡',
-    title: 'Agentic Development',
-    description:
-      'Autonomous agents handle scaffolding, wiring, and boilerplate so your engineers stay focused on what matters.',
-  },
-  {
-    icon: '🔒',
-    title: 'Type-Safe by Default',
-    description:
-      'Every output is TypeScript strict — interfaces defined before implementation, Zod validation at every boundary.',
-  },
-  {
-    icon: '🎨',
-    title: 'Design System Integration',
-    description:
-      'Components slot directly into your existing design system. Tokens consumed, never invented.',
-  },
-  {
-    icon: '🧩',
-    title: 'Composable Architecture',
-    description:
-      'Modular folder structure with barrel exports keeps your codebase navigable as it scales.',
-  },
-  {
-    icon: '🔄',
-    title: 'Continuous Iteration',
-    description:
-      'Ship a working feature, get feedback, iterate — without accumulating technical debt at every turn.',
-  },
-  {
-    icon: '📋',
-    title: 'Full Audit Trail',
-    description:
-      'Every agent run produces a structured dev notes log posted directly to your Linear ticket.',
-  },
-]

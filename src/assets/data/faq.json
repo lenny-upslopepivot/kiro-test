@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Can I change my plan at any time?",
+    "answer": "Yes. You can upgrade or downgrade your plan at any time from your account settings. Changes take effect at the start of your next billing cycle, and we'll prorate any unused time."
+  },
+  {
+    "question": "Is there a free trial for the Team plan?",
+    "answer": "Absolutely. The Team plan includes a 14-day free trial with no credit card required. You'll have full access to all Team features during the trial period."
+  },
+  {
+    "question": "What counts as a ticket?",
+    "answer": "A ticket is any unit of work submitted to the Upslope Pivot pipeline — a feature, bug fix, refactor, or chore scoped in Linear or your connected project management tool."
+  },
+  {
+    "question": "Do you offer discounts for annual billing?",
+    "answer": "Yes. Annual plans are billed at a 20% discount compared to monthly pricing. You can switch to annual billing from your account settings at any time."
+  },
+  {
+    "question": "How does Enterprise pricing work?",
+    "answer": "Enterprise pricing is tailored to your team's size, usage, and compliance requirements. Contact our sales team and we'll put together a custom quote — typically within one business day."
+  }
+]

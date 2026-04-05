@@ -1,0 +1,41 @@
+{
+  "_todo": "TODO(nova): Review and finalize all feature copy and confirm icon selections before launch",
+  "features": [
+    {
+      "title": "Blazing Fast Performance",
+      "description": "Ship faster with optimized agentic pipelines built for scale.",
+      "longDescription": "Upslope's agentic runtime is designed for low-latency execution across distributed workloads. Whether you're running a single agent or an entire fleet, tasks are queued, prioritized, and executed with minimal overhead so your team spends less time waiting and more time shipping.",
+      "icon": "SpeedOutlined"
+    },
+    {
+      "title": "Seamless Collaboration",
+      "description": "Keep your whole team in sync with shared context and real-time updates.",
+      "longDescription": "Every agent run, decision, and artifact is logged and surfaced to the right people at the right time. Role-based access controls and shared workspaces mean your engineers, PMs, and stakeholders are always working from the same source of truth — no more scattered Slack threads.",
+      "icon": "GroupsOutlined"
+    },
+    {
+      "title": "Extensible Integrations",
+      "description": "Connect the tools you already use without changing your workflow.",
+      "longDescription": "Upslope integrates with your existing stack out of the box — GitHub, Linear, Slack, Figma, and more. Our open integration API means you can build custom connectors in minutes, not days, and our webhook system keeps everything in sync automatically.",
+      "icon": "ExtensionOutlined"
+    },
+    {
+      "title": "Enterprise-Grade Security",
+      "description": "Protect your code and data with security built in from day one.",
+      "longDescription": "Every request is authenticated, every secret is encrypted at rest and in transit, and every agent action is logged for audit. Upslope is SOC 2 Type II compliant and supports SSO, SAML, and custom data residency requirements for enterprise customers.",
+      "icon": "ShieldOutlined"
+    },
+    {
+      "title": "Intelligent Observability",
+      "description": "Understand exactly what your agents are doing and why.",
+      "longDescription": "Upslope surfaces structured logs, step-by-step traces, and cost breakdowns for every agent run. Set up alerts on failure rates, latency thresholds, or token usage, and drill into any run to see the exact sequence of decisions your agent made — no guesswork required.",
+      "icon": "InsightsOutlined"
+    },
+    {
+      "title": "One-Click Deployments",
+      "description": "Go from code to production without the ceremony.",
+      "longDescription": "Upslope's deployment pipeline handles environment promotion, secret injection, and rollback automatically. Preview deployments on every pull request, promote to production with a single click, and roll back instantly if something goes wrong — all without leaving your dashboard.",
+      "icon": "RocketLaunchOutlined"
+    }
+  ]
+}

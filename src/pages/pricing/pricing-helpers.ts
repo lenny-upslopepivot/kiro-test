@@ -42,23 +42,54 @@ export const pricingStyles = {
 export interface PricingPlan {
   name: string
   price: string
-  description: string
+  billingPeriod: string
+  features: string[]
+  ctaLabel: string
+  ctaHref: string
+  highlighted?: boolean
 }
 
 export const PRICING_PLANS: PricingPlan[] = [
   {
     name: 'Starter',
     price: '$0',
-    description: 'Perfect for solo developers exploring the Upslope pipeline on small projects.',
+    billingPeriod: '/ month',
+    features: [
+      'Up to 3 tickets per month',
+      'Kiro & Nova personas',
+      'GitHub integration',
+      'Community support',
+    ],
+    ctaLabel: 'Get started free',
+    ctaHref: '/signup',
   },
   {
     name: 'Team',
-    price: '$99/mo',
-    description: 'For growing teams that want consistent, production-grade output across every ticket.',
+    price: '$99',
+    billingPeriod: '/ month',
+    features: [
+      'Unlimited tickets',
+      'All agent personas',
+      'GitHub + Linear integration',
+      'Priority support',
+      'Team dashboard',
+    ],
+    ctaLabel: 'Start free trial',
+    ctaHref: '/signup?plan=team',
+    highlighted: true,
   },
   {
     name: 'Enterprise',
     price: 'Custom',
-    description: 'Full pipeline integration, dedicated support, and custom agent personas for large orgs.',
+    billingPeriod: 'contact us',
+    features: [
+      'Everything in Team',
+      'Custom agent personas',
+      'Dedicated infrastructure',
+      'SLA & compliance docs',
+      'Onboarding & training',
+    ],
+    ctaLabel: 'Talk to sales',
+    ctaHref: '/contact',
   },
 ]

@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from '@mui/material'
-import { lightTheme, darkTheme } from './theme'
+import { lightTheme, darkTheme } from '@/theme'
 
 type ThemeMode = 'light' | 'dark'
 

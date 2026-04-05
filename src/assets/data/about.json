@@ -1,0 +1,25 @@
+{
+  "mission": "We build software that gives development teams leverage. Upslope Pivot combines structured workflows, agentic execution, and human oversight so teams can ship production-ready code faster — without sacrificing quality or control.",
+  "values": [
+    {
+      "icon": "Target",
+      "title": "Precision over speed",
+      "description": "We move fast, but never at the cost of correctness. Every output is type-safe, accessible, and production-hardened before it ships."
+    },
+    {
+      "icon": "Eye",
+      "title": "Transparency first",
+      "description": "Our agents narrate their work. Every decision, assumption, and trade-off is logged so your team stays fully informed."
+    },
+    {
+      "icon": "Settings",
+      "title": "Convention over configuration",
+      "description": "We define a clear architecture once and enforce it consistently — so codebases stay predictable as they scale."
+    },
+    {
+      "icon": "Users",
+      "title": "Humans in the loop",
+      "description": "Agents propose, humans approve. The pipeline accelerates your team — it does not replace your judgment."
+    }
+  ]
+}

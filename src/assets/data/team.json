@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Kiro Tan",
+    "title": "Senior Full-Stack Engineer",
+    "initials": "KT",
+    "bio": "Leads architecture and implementation across Next.js and React projects. Obsessively precise about types, security boundaries, and production quality."
+  },
+  {
+    "name": "Nova Ellis",
+    "title": "Design Systems Lead",
+    "initials": "NE",
+    "bio": "Owns the component library, design tokens, and visual language. Ensures every pixel is intentional and every interaction is polished."
+  },
+  {
+    "name": "Mira Solis",
+    "title": "QA & Delivery Lead",
+    "initials": "MC",
+    "bio": "Drives acceptance criteria, test coverage, and story sign-off. Nothing ships without Mira's green light."
+  }
+]

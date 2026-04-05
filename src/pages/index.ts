@@ -1,3 +1,7 @@
 export { Home } from './home'
 export { About } from './about'
 export { Contact } from './contact'
+export { Features } from './features'
+export { Pricing } from './pricing'
+export { Demo } from './demo'
+export { NotFound } from './notFound'

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import {
   AppBar,
   Box,
+  Button,
   Drawer,
   IconButton,
   List,
@@ -12,17 +13,24 @@ import {
   Typography,
 } from '@mui/material'
 import { Menu, Moon, Sun, X } from 'lucide-react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useThemeMode } from '@/lib'
-import { headerStyles, NAV_ITEMS } from './header-helpers'
+import { CTA_LABEL, CTA_PATH, headerStyles, NAV_ITEMS } from './header-helpers'
 
 export const Header = () => {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const [drawerOpen, setDrawerOpen] = useState(false)
   const { mode, toggleMode } = useThemeMode()
 
   const openDrawer = () => setDrawerOpen(true)
   const closeDrawer = () => setDrawerOpen(false)
+
+  const handleCtaClick = () => navigate(CTA_PATH)
+  const handleDrawerCtaClick = () => {
+    closeDrawer()
+    navigate(CTA_PATH)
+  }
 
   return (
     <>
@@ -32,12 +40,12 @@ export const Header = () => {
         sx={headerStyles.appBar.sx}
       >
         <Toolbar sx={headerStyles.toolbar.sx}>
-          {/* Brand */}
+          {/* TODO(nova): replace text with product logo asset */}
           <Typography component={Link} to="/" sx={headerStyles.brand}>
             Upslope
           </Typography>
 
-          {/* Right side: desktop nav + theme toggle + mobile hamburger */}
+          {/* Right side: desktop nav + CTA + theme toggle + mobile hamburger */}
           <Box sx={headerStyles.rightSide}>
             {/* Desktop nav — hidden on mobile */}
             <Box sx={headerStyles.navLinks.sx}>
@@ -52,6 +60,18 @@ export const Header = () => {
                 </Typography>
               ))}
             </Box>
+
+            {/* CTA button — desktop only */}
+            <Button
+              variant="contained"
+              color="primary"
+              size="small"
+              onClick={handleCtaClick}
+              sx={headerStyles.ctaButton}
+            >
+              {/* TODO(nova): confirm final CTA copy */}
+              {CTA_LABEL}
+            </Button>
 
             {/* Theme toggle — always visible */}
             <IconButton
@@ -83,6 +103,7 @@ export const Header = () => {
       >
         {/* Drawer header */}
         <Box sx={headerStyles.drawerHeader}>
+          {/* TODO(nova): replace text with product logo asset */}
           <Typography
             component={Link}
             to="/"
@@ -118,6 +139,19 @@ export const Header = () => {
             )
           })}
         </List>
+
+        {/* Drawer CTA button */}
+        <Box sx={headerStyles.drawerCtaWrapper}>
+          <Button
+            variant="contained"
+            color="primary"
+            fullWidth
+            onClick={handleDrawerCtaClick}
+          >
+            {/* TODO(nova): confirm final CTA copy */}
+            {CTA_LABEL}
+          </Button>
+        </Box>
       </Drawer>
     </>
   )

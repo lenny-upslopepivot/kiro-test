@@ -1,14 +1,16 @@
 import { type Theme } from '@mui/material'
 
+// TODO(nova): review AppBar surface token — may want a distinct header background per brand palette
 export const headerStyles = {
   appBar: {
     position: 'fixed' as const,
     elevation: 0,
-    sx: {
-      backgroundColor: '#0f172a',
-      borderBottom: '1px solid rgba(255,255,255,0.08)',
-    },
+    sx: (theme: Theme) => ({
+      backgroundColor: theme.palette.background.paper,
+      borderBottom: `1px solid ${theme.palette.divider}`,
+    }),
   },
+
   toolbar: {
     sx: {
       display: 'flex',
@@ -18,30 +20,36 @@ export const headerStyles = {
       py: 1,
     },
   },
+
+  // TODO(nova): replace text brand with logo asset once available
   brand: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '1.25rem',
     letterSpacing: '-0.02em',
-    color: theme.palette.common.white,
+    color: theme.palette.text.primary,
     textDecoration: 'none',
     '&:hover': { opacity: 0.85 },
   }),
-  // Right side container — holds desktop nav, theme toggle, and mobile hamburger
+
+  // Right-side container — desktop nav, CTA, theme toggle, mobile hamburger
   rightSide: {
     display: 'flex',
     alignItems: 'center',
     gap: 1,
     ml: 'auto',
   },
-  // Desktop nav — hidden on mobile, visible md+
+
+  // Desktop nav — hidden below md breakpoint
   navLinks: {
     sx: {
       display: { xs: 'none', md: 'flex' },
-      gap: 1,
+      alignItems: 'center',
+      gap: 0.5,
     },
   },
-  navLink: (active: boolean) => ({
-    color: active ? '#fff' : 'rgba(255,255,255,0.65)',
+
+  navLink: (active: boolean) => (theme: Theme) => ({
+    color: active ? theme.palette.text.primary : theme.palette.text.secondary,
     fontWeight: active ? 600 : 400,
     fontSize: '0.9rem',
     textDecoration: 'none',
@@ -49,71 +57,93 @@ export const headerStyles = {
     py: 0.75,
     borderRadius: 1,
     transition: 'all 0.15s ease',
-    backgroundColor: active ? 'rgba(255,255,255,0.1)' : 'transparent',
+    backgroundColor: active ? theme.palette.action.selected : 'transparent',
     '&:hover': {
-      color: '#fff',
-      backgroundColor: 'rgba(255,255,255,0.08)',
+      color: theme.palette.text.primary,
+      backgroundColor: theme.palette.action.hover,
     },
   }),
-  // Theme toggle button — always visible, always on the dark AppBar
-  themeToggleButton: {
-    color: '#fff',
-    p: 1,
-    '&:hover': { backgroundColor: 'rgba(255,255,255,0.08)' },
+
+  // CTA button — desktop only; hidden below md breakpoint
+  ctaButton: {
+    display: { xs: 'none', md: 'inline-flex' },
+    ml: 1,
   },
-  // Hamburger button — visible on mobile, hidden md+
-  hamburgerButton: {
+
+  themeToggleButton: (theme: Theme) => ({
+    color: theme.palette.text.primary,
+    p: 1,
+    '&:hover': { backgroundColor: theme.palette.action.hover },
+  }),
+
+  // Hamburger — visible on mobile, hidden md+
+  hamburgerButton: (theme: Theme) => ({
     display: { xs: 'flex', md: 'none' },
-    color: '#fff',
+    color: theme.palette.text.primary,
     p: 1,
-  },
-  // Drawer paper
-  drawerPaper: {
-    backgroundColor: '#0f172a',
+    '&:hover': { backgroundColor: theme.palette.action.hover },
+  }),
+
+  // ─── Mobile drawer ────────────────────────────────────────────────────────
+
+  drawerPaper: (theme: Theme) => ({
+    backgroundColor: theme.palette.background.paper,
     width: 260,
-  },
-  // Drawer header row (brand + close button)
-  drawerHeader: {
+  }),
+
+  drawerHeader: (theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     px: 2,
     py: 1.5,
-    borderBottom: '1px solid rgba(255,255,255,0.08)',
-  },
+    borderBottom: `1px solid ${theme.palette.divider}`,
+  }),
+
+  // TODO(nova): replace text brand with logo asset once available
   drawerBrand: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '1.25rem',
     letterSpacing: '-0.02em',
-    color: theme.palette.common.white,
+    color: theme.palette.text.primary,
     textDecoration: 'none',
     '&:hover': { opacity: 0.85 },
   }),
-  drawerCloseButton: {
-    color: 'rgba(255,255,255,0.7)',
+
+  drawerCloseButton: (theme: Theme) => ({
+    color: theme.palette.text.secondary,
     p: 1,
-    '&:hover': { color: '#fff' },
-  },
-  // Drawer nav list
+    '&:hover': { color: theme.palette.text.primary },
+  }),
+
   drawerNavList: {
     pt: 1,
     px: 1,
   },
-  drawerNavItem: (active: boolean) => ({
+
+  drawerNavItem: (active: boolean) => (theme: Theme) => ({
     borderRadius: 1,
     mb: 0.5,
-    backgroundColor: active ? 'rgba(255,255,255,0.1)' : 'transparent',
+    backgroundColor: active ? theme.palette.action.selected : 'transparent',
     '&:hover': {
-      backgroundColor: 'rgba(255,255,255,0.08)',
+      backgroundColor: theme.palette.action.hover,
     },
   }),
-  drawerNavText: (active: boolean) => ({
+
+  drawerNavText: (active: boolean) => (theme: Theme) => ({
     '& .MuiListItemText-primary': {
-      color: active ? '#fff' : 'rgba(255,255,255,0.65)',
+      color: active ? theme.palette.text.primary : theme.palette.text.secondary,
       fontWeight: active ? 600 : 400,
       fontSize: '0.95rem',
     },
   }),
+
+  // CTA button wrapper inside the drawer — below the nav list
+  drawerCtaWrapper: {
+    px: 2,
+    pt: 2,
+    pb: 1,
+  },
 }
 
 export interface NavItem {
@@ -121,11 +151,14 @@ export interface NavItem {
   path: string
 }
 
+// Ticket AC: Features, Pricing, About, Contact in the nav
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: '/' },
   { label: 'Features', path: '/features' },
   { label: 'Pricing', path: '/pricing' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
-  { label: 'Demo', path: '/demo' },
 ]
+
+// TODO(nova): confirm final CTA copy — "Request Demo" or "Get Started"
+export const CTA_LABEL = 'Get Started'
+export const CTA_PATH = '/demo'

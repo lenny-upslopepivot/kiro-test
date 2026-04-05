@@ -1,5 +1,23 @@
 import { type Theme } from '@mui/material'
 
+// ─── Types ────────────────────────────────────────────────────────────────────
+
+export interface FooterNavItem {
+  label: string
+  path: string
+}
+
+// ─── Data ─────────────────────────────────────────────────────────────────────
+
+export const FOOTER_NAV_ITEMS: FooterNavItem[] = [
+  { label: 'Features', path: '/features' },
+  { label: 'Pricing', path: '/pricing' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+]
+
+// ─── Styles ───────────────────────────────────────────────────────────────────
+
 export const footerStyles = {
   root: {
     backgroundColor: '#0f172a',
@@ -16,6 +34,11 @@ export const footerStyles = {
     justifyContent: 'space-between',
     gap: { xs: 3, md: 0 },
   },
+  brandGroup: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: 0.5,
+  },
   brand: (theme: Theme) => ({
     fontWeight: 700,
     fontSize: '1.15rem',
@@ -24,6 +47,10 @@ export const footerStyles = {
     textDecoration: 'none',
     '&:hover': { opacity: 0.85 },
   }),
+  tagline: {
+    fontSize: '0.8rem',
+    color: 'rgba(255,255,255,0.5)',
+  },
   nav: {
     display: 'flex',
     flexWrap: 'wrap' as const,
@@ -45,7 +72,7 @@ export const footerStyles = {
     color: 'rgba(255,255,255,0.4)',
     fontSize: '0.8rem',
     mt: { xs: 3, md: 0 },
-    alignSelf: { xs: 'flex-start', md: 'center' },
+    alignSelf: { xs: 'flex-start', md: 'center' } as const,
     display: 'block',
   },
 }

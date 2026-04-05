@@ -1,4 +1,30 @@
 import { type Theme } from '@mui/material'
+import { Target, Eye, Settings, Users, type LucideIcon } from 'lucide-react'
+
+export interface TeamMember {
+  name: string
+  title: string
+  initials: string
+  bio: string
+}
+
+export interface ValueItem {
+  icon: string
+  title: string
+  description: string
+}
+
+export interface AboutData {
+  mission: string
+  values: ValueItem[]
+}
+
+export const ICON_MAP: Record<string, LucideIcon | undefined> = {
+  Target,
+  Eye,
+  Settings,
+  Users,
+}
 
 export const aboutStyles = {
   root: {
@@ -7,128 +33,76 @@ export const aboutStyles = {
     maxWidth: 860,
     mx: 'auto',
   },
+  missionBlock: (theme: Theme) => ({
+    mb: 8,
+    p: { xs: 3, md: 5 },
+    backgroundColor: theme.palette.mode === 'dark' ? '#1e1b4b' : '#eef2ff',
+    borderRadius: 3,
+    borderLeft: `4px solid ${theme.palette.primary.main}`,
+  }),
+  missionLabel: (theme: Theme) => ({
+    fontSize: '0.75rem',
+    fontWeight: 700,
+    textTransform: 'uppercase' as const,
+    letterSpacing: '0.08em',
+    color: theme.palette.primary.main,
+    mb: 1.5,
+  }),
+  missionText: (theme: Theme) => ({
+    fontSize: { xs: '1rem', md: '1.15rem' },
+    color: theme.palette.text.primary,
+    lineHeight: 1.75,
+    fontWeight: 400,
+  }),
   sectionTitle: (theme: Theme) => ({
     fontSize: '1.3rem',
     fontWeight: 700,
     color: theme.palette.text.primary,
     mb: 3,
   }),
-  valuesGrid: {
+  teamGrid: {
     display: 'grid',
-    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr' },
+    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
     gap: 3,
     mb: 8,
   },
-  valueCard: (theme: Theme) => ({
+  valuesList: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    gap: 2,
+    mb: 8,
+  },
+  valueItem: (theme: Theme) => ({
+    display: 'flex',
+    gap: 2.5,
     p: 3,
     border: `1px solid ${theme.palette.divider}`,
     borderRadius: 3,
+    alignItems: 'flex-start',
   }),
+  valueIconWrap: (theme: Theme) => ({
+    flexShrink: 0,
+    width: 40,
+    height: 40,
+    borderRadius: 2,
+    backgroundColor: theme.palette.mode === 'dark' ? '#312e81' : '#e0e7ff',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: theme.palette.primary.main,
+  }),
+  valueContent: {
+    flex: 1,
+  },
   valueTitle: (theme: Theme) => ({
     fontWeight: 700,
-    fontSize: '1rem',
+    fontSize: '0.95rem',
     color: theme.palette.text.primary,
-    mb: 0.75,
+    mb: 0.5,
   }),
   valueBody: (theme: Theme) => ({
     fontSize: '0.875rem',
     color: theme.palette.text.secondary,
     lineHeight: 1.65,
   }),
-  teamGrid: {
-    display: 'grid',
-    gridTemplateColumns: { xs: '1fr', sm: '1fr 1fr', md: '1fr 1fr 1fr' },
-    gap: 3,
-  },
-  teamCard: (theme: Theme) => ({
-    p: 3,
-    backgroundColor: theme.palette.background.paper,
-    border: `1px solid ${theme.palette.divider}`,
-    borderRadius: 3,
-    textAlign: 'center' as const,
-  }),
-  avatar: (theme: Theme) => ({
-    width: 56,
-    height: 56,
-    borderRadius: '50%',
-    backgroundColor: theme.palette.mode === 'dark' ? '#312e81' : '#e0e7ff',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    mx: 'auto',
-    mb: 1.5,
-    fontSize: '1.5rem',
-  }),
-  teamName: (theme: Theme) => ({
-    fontWeight: 700,
-    fontSize: '0.95rem',
-    color: theme.palette.text.primary,
-  }),
-  teamRole: (theme: Theme) => ({
-    fontSize: '0.8rem',
-    color: theme.palette.primary.main,
-    fontWeight: 500,
-    mb: 0.75,
-  }),
-  teamBio: (theme: Theme) => ({
-    fontSize: '0.8rem',
-    color: theme.palette.text.secondary,
-    lineHeight: 1.6,
-  }),
 }
-
-export interface ValueItem {
-  title: string
-  description: string
-}
-
-export const VALUES: ValueItem[] = [
-  {
-    title: 'Precision over speed',
-    description:
-      'We move fast, but never at the cost of correctness. Every output is type-safe, accessible, and production-hardened before it ships.',
-  },
-  {
-    title: 'Transparency first',
-    description:
-      'Our agents narrate their work. Every decision, assumption, and trade-off is logged so your team stays fully informed.',
-  },
-  {
-    title: 'Convention over configuration',
-    description:
-      'We define a clear architecture once and enforce it consistently — so codebases stay predictable as they scale.',
-  },
-  {
-    title: 'Humans in the loop',
-    description:
-      'Agents propose, humans approve. The pipeline accelerates your team — it does not replace your judgment.',
-  },
-]
-
-export interface TeamMember {
-  emoji: string
-  name: string
-  role: string
-  bio: string
-}
-
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    emoji: '🧠',
-    name: 'Kiro Tan',
-    role: 'Senior Full-Stack Engineer',
-    bio: 'Leads architecture and implementation across Next.js and React projects. Obsessively precise.',
-  },
-  {
-    emoji: '🎨',
-    name: 'Mara Voss',
-    role: 'Design Systems Lead',
-    bio: 'Owns the component library and design tokens. Keeps the UI consistent from prototype to production.',
-  },
-  {
-    emoji: '🔧',
-    name: 'Eli Strand',
-    role: 'Infrastructure & DevOps',
-    bio: 'Manages CI/CD pipelines, Vercel deployments, and Firebase environments across all client projects.',
-  },
-]

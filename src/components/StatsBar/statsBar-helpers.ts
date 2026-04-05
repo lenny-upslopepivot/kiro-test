@@ -16,6 +16,8 @@ export interface StatsBarProps {
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 // Source of truth: /assets/data/stats.json
+// Note: the JSON file is shaped as { "stats": [...] } (object wrapper), not a root array.
+// The story spec described a root array, but the file on disk uses the wrapper key — .stats access is intentional.
 // TODO(nova): review and finalize all stat values and labels before launch
 export const STATS: StatItem[] = statsJson.stats
 

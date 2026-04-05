@@ -41,3 +41,7 @@ Thumbs.db
 
 # Testing
 /coverage
+
+# Lock files
+package-lock.json
+yarn.lock

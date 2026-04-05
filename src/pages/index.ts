@@ -1,4 +1,5 @@
 export { Home } from './home'
+export { Landing } from './Landing'
 export { About } from './about'
 export { Contact } from './contact'
 export { Features } from './features'

@@ -1,24 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Box, Toolbar } from '@mui/material'
-import { Header, Footer } from '@/components'
-import { Home, About, Contact } from '@/pages'
 import { ThemeContextProvider } from '@/lib'
+import { PageShell } from '@/components'
+import { Home, Features, Pricing, About, Contact, Demo, NotFound } from '@/pages'
 
 export const App = () => {
   return (
     <ThemeContextProvider>
       <BrowserRouter>
-        <Box sx={{ minHeight: '100vh', bgcolor: 'background.default' }}>
-          <Header />
-          {/* Spacer — pushes page content below the fixed AppBar */}
-          <Toolbar sx={{ py: 1 }} />
-          <Routes>
+        <Routes>
+          <Route element={<PageShell />}>
             <Route path="/" element={<Home />} />
+            <Route path="/features" element={<Features />} />
+            <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
-          </Routes>
-          <Footer />
-        </Box>
+            <Route path="/demo" element={<Demo />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </ThemeContextProvider>
   )
